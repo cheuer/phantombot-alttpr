@@ -1,5 +1,5 @@
 # phantombot-alttpr
-This is a script for PhantomBot that lets you run a guessing game for A Link to the Past Randomizer.
+This is a script for [PhantomBot](https://github.com/PhantomBot/PhantomBot) that lets you run a guessing game for A Link to the Past Randomizer.
 
 ## Main Functions
 
