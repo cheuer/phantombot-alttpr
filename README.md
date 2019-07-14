@@ -11,7 +11,7 @@ This is a script for PhantomBot that lets you run a guessing game for A Link to 
   
   Ends the guessing period, no more guesses in chat will be recorded
   
-* !bk <number>
+* !bk `number`
   
   Declares one or more winners as the chat users with the exact right guess or the closest to it. Preference is given to the number lower than the correct answer in case of a tie. Also prints the leaderboard.
   
@@ -34,7 +34,7 @@ All of these can be preceded by !bk or !bb, doesn't matter
   
   Resets the leaderboard
   
-* !bk set <name> <number>
+* !bk set `name` `number`
   
   Sets a specific number of wins on the leaderboard for a user
   
@@ -42,6 +42,6 @@ All of these can be preceded by !bk or !bb, doesn't matter
   
   Shows the current timer setting
   
-* !bk timer <number>
+* !bk timer `number`
   
   Sets the timer length, in seconds. This will automatically end the game after the given number of seconds. This setting persists across games, so you can set it and forget it. You can still call !bk stop to stop the timer early.
