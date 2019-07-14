@@ -45,3 +45,6 @@ All of these can be preceded by !bk or !bb, doesn't matter
 * !bk timer `number`
   
   Sets the timer length, in seconds. This will automatically end the game after the given number of seconds. This setting persists across games, so you can set it and forget it. You can still call !bk stop to stop the timer early.
+
+## Installation
+Just copy alttpr.js to somewhere under the PhantomBot/scripts directory. I like to put it in a folder named "custom" but that isn't actually required.
