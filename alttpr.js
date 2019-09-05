@@ -93,7 +93,11 @@
         var message = 'The correct answer was ' + value + '!';
 
         if( winners.length > 0 ) {
-            message += ' The closest guess was ' + winning_guess + ' from: ';
+            if( winning_guess == value ) {
+                message += ' The winner(s): ';
+            } else {
+                message += ' The closest guess was ' + winning_guess + ' from: ';
+            }
             for( i = 0; i < winners.length; i++ ) {
                 if( i > 0 ) {
                     message += ', ';
@@ -196,7 +200,7 @@
             case 'start':
             default:
                 if( command.equalsIgnoreCase( 'bk' ) ) {
-                    if( args[0] !== undefined ) {
+                    if( args[0] !== undefined && !isNaN( args[0] ) ) {
                         winner( args[0], 1, 22 );
                     } else {
                         start( 'Guess where the big key is hiding in Ganon\'s tower! Type a number in chat between 1 and 22.' );
@@ -204,7 +208,7 @@
                 }
 
                 if( command.equalsIgnoreCase( 'bb' ) ) {
-                    if( args[0] !== undefined ) {
+                    if( args[0] !== undefined && !isNaN( args[0] ) ) {
                         winner( args[0], 0, 15 );
                     } else {
                         start( 'Guess how many "blue ball" attacks Agahnim will throw at us! Type a number in chat between 0 and 15.' );
