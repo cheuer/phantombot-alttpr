@@ -47,6 +47,10 @@
     function winner( value, min, max ) {
         value = parseInt( value );
 
+        if( isRunning ) {
+            isRunning = false;
+        }
+
         var dbGuesses = $.inidb.GetKeyList( 'alttpr_guesses', '' ),
             guesses = [],
             winners = [];
@@ -199,19 +203,23 @@
 
             case 'start':
             default:
+				if( args[0] !== undefined && args[0] != 'start' && isNaN( args[0] ) ) {
+					return;
+				}
+
                 if( command.equalsIgnoreCase( 'bk' ) ) {
-                    if( args[0] !== undefined && !isNaN( args[0] ) ) {
-                        winner( args[0], 1, 22 );
-                    } else {
+                    if( isNaN( args[0] ) ) {
                         start( 'Guess where the big key is hiding in Ganon\'s tower! Type a number in chat between 1 and 22.' );
+                    } else {
+                        winner( args[0], 1, 22 );
                     }
                 }
 
                 if( command.equalsIgnoreCase( 'bb' ) ) {
-                    if( args[0] !== undefined && !isNaN( args[0] ) ) {
-                        winner( args[0], 0, 15 );
-                    } else {
+                    if( isNaN( args[0] ) ) {
                         start( 'Guess how many "blue ball" attacks Agahnim will throw at us! Type a number in chat between 0 and 15.' );
+                    } else {
+                        winner( args[0], 0, 15 );
                     }
                 }
         }
