@@ -153,6 +153,10 @@
         var args = event.getArgs();
 
         switch( String( args[0] ) ) {
+            case 'help':
+                $.say( 'Usage: [start], (number), reset, cancel, stop, set (name) (number), print, timer [number], help' );
+                break;
+
             case 'reset':
                 $.inidb.RemoveFile( 'alttpr_winners' );
                 $.say( 'Leaderboard reset!' );
