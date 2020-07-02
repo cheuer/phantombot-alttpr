@@ -22,6 +22,10 @@ This is a script for [PhantomBot](https://github.com/PhantomBot/PhantomBot) that
 ## Utility Functions
 All of these can be preceded by !bk or !bb, doesn't matter
 
+* !bk help
+
+  Prints a list of commands
+
 * !bk cancel
   
   Cancels the guessing game and deletes the saved guesses. Useful if you started it accidentally, or want to start over for some reason.
