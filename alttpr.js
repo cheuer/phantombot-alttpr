@@ -146,6 +146,16 @@
         $.say( message );
     }
 
+    function random_guess( min, max ) {
+        if( false == $.getIniDbBoolean( 'alttpr_settings', 'guess' ) ) {
+            return;
+        }
+
+        var guess = Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+        $.say( 'My guess is ' + guess );
+        $.inidb.SetInteger( 'alttpr_guesses', '', $.botName, guess );
+    }
+
     $.bind( 'command', function( event ) {
         var command = event.getCommand();
         var sender = event.getSender();
@@ -154,7 +164,7 @@
 
         switch( String( args[0] ) ) {
             case 'help':
-                $.say( 'Usage: [start], (number), reset, cancel, stop, set (name) (number), print, timer [number], help' );
+                $.say( 'Usage: [start], (number), reset, cancel, stop, set (name) (number), print, timer [number], guess, help' );
                 break;
 
             case 'reset':
@@ -205,15 +215,27 @@
                 }
                 break;
 
+            case 'guess':
+                var setting = $.getIniDbBoolean( 'alttpr_settings', 'guess', false );
+                $.consoleLn( typeof setting );
+                if( false == setting ){
+                    $.say( 'Bot guessing enabled' );
+                } else {
+                    $.say( 'Bot guessing disabled' );
+                }
+                $.setIniDbBoolean( 'alttpr_settings', 'guess', !setting );
+                break;
+
             case 'start':
             default:
 				if( args[0] !== undefined && args[0] != 'start' && isNaN( args[0] ) ) {
 					return;
-				}
+                }
 
                 if( command.equalsIgnoreCase( 'bk' ) ) {
                     if( isNaN( args[0] ) ) {
                         start( 'Guess where the big key is hiding in Ganon\'s tower! Type a number in chat between 1 and 22.' );
+                        random_guess( 1, 22 );
                     } else {
                         winner( args[0], 1, 22 );
                     }
@@ -222,6 +244,7 @@
                 if( command.equalsIgnoreCase( 'bb' ) ) {
                     if( isNaN( args[0] ) ) {
                         start( 'Guess how many "blue ball" attacks Agahnim will throw at us! Type a number in chat between 0 and 15.' );
+                        random_guess( 0, 15 );
                     } else {
                         winner( args[0], 0, 15 );
                     }
