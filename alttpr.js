@@ -241,7 +241,7 @@
                     }
                 }
 
-                if( command.equalsIgnoreCase( 'bb' ) ) {
+                if( command.equalsIgnoreCase( 'bl' ) ) {
                     if( isNaN( args[0] ) ) {
                         start( 'Guess how many "blue ball" attacks Agahnim will throw at us! Type a number in chat between 0 and 15.' );
                         random_guess( 0, 15 );
@@ -269,7 +269,7 @@
 
     $.bind( 'initReady', function() {
         $.registerChatCommand( './custom/alttpr.js', 'bk', 2 );
-        $.registerChatCommand( './custom/alttpr.js', 'bb', 2 );
+        $.registerChatCommand( './custom/alttpr.js', 'bl', 2 );
     } );
 
 } )();
