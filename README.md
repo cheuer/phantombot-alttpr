@@ -15,12 +15,12 @@ This is a script for [PhantomBot](https://github.com/PhantomBot/PhantomBot) that
   
   Declares one or more winners as the chat users with the exact right guess or the closest to it. Preference is given to the number lower than the correct answer in case of a tie. Also prints the leaderboard.
   
-* !bb
+* !bl
   
   Same as !bk, but for blue ball attacks from Agahnim
   
 ## Utility Functions
-All of these can be preceded by !bk or !bb, doesn't matter
+All of these can be preceded by !bk or !bl, doesn't matter
 
 * !bk help
 
