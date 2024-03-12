@@ -1,4 +1,6 @@
-# phantombot-alttpr
+# DEPRECATED
+  Moved to [cheuer/phantombot-scripts](https://github.com/cheuer/phantombot-scripts)
+
 This is a script for [PhantomBot](https://github.com/PhantomBot/PhantomBot) that lets you run a guessing game for A Link to the Past Randomizer.
 
 ## Main Functions
